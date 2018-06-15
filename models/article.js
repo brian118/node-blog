@@ -21,7 +21,7 @@ const articleShema = new mongoose.Schema({
 	descript:{type: String ,required:true},
 
 	//标签
-	tag:[
+	tags:[
 		{type:mongoose.Schema.Types.ObjectId,ref:'Tag'}
 	],
 

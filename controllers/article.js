@@ -10,9 +10,11 @@ class Article extends BaseComponent{
 	//添加文章
 	async addArticle(req,res,next){
 		const form = new formidable.IncomingForm();
-		form.parse(req,async(err , fields , files) =>{
+		let fields = req.query;
+		//form.parse(req,async(err , fields , files) =>{	//方便测试 目前接口统一get请求
+			console.log(Object.keys(fields).length)
 			try{
-				if(Object.keys(fields).length <= 6){
+				if(Object.keys(fields).length < 6){
 					throw new Error('请填写必填项');
 				}
 			}catch(err){
@@ -24,14 +26,15 @@ class Article extends BaseComponent{
 				})
 				return
 			}
-			let {title, tag, content, editContent, keyword, descript} = fields;
+			let {title, content, tag,editContent, keyword, descript} = fields;
+			tag = tag.split(',');
 			let articleObj = {
 				title:title,
-				tag:tag,
 				content:content,
 				editContent:editContent,
 				keyword:keyword,
-				descript:descript
+				descript:descript,
+				tags:tag
 			}
 			let newArticle = new ArticleModel(articleObj) ;
 			try{
@@ -48,7 +51,7 @@ class Article extends BaseComponent{
 					message:'保存文章失败'
 				})
 			}
-		})
+		//})
 	}
 	//删除
 	async deleteArticle(req , res , next){
@@ -128,7 +131,7 @@ class Article extends BaseComponent{
 			sort : {create_at:-1},
 			page:Number(current_page),
 			limit:Number(page_size),
-			populate:['tag'],
+			populate:['tags'],
 			select:'-content'
 		}
 
