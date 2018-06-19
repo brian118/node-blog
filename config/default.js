@@ -15,7 +15,7 @@ module.exports = {
 		}
 	},
 	EMAIL:{
-		account: argv.EMAIL_account || '626491171@qq.com',
-		password: argv.EMAIL_password || 'bcw123'
+		account: argv.EMAIL_account || 'you_email_account',
+		password: argv.EMAIL_password || 'you_email_password'
 	}
 }

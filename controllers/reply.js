@@ -89,7 +89,7 @@ class Reply extends BaseComponent{
 			str += `,${reply.form.email}`
 		}
 		sendMail({
-			to: str
+			to: str,
 			subject: '你在blog.brian有新的评论回复',
 			text: `来自 ${reply.from.name} 的留言：${reply.content}`,
 			html: `<p> 来自 ${reply.from.name} 的留言：${reply.content}</p><br><a href="https://www.baidu.com" target="_blank">[ 点击查看 ]</a>`
