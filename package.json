@@ -36,7 +36,7 @@
     "gm": "^1.23.0",
     "marked": "^0.3.6",
     "moment": "^2.18.1",
-    "mongodb": "^2.2.25",
+    "mongodb": "^3.1.13",
     "mongoose": "^4.9.3",
     "mongoose-auto-increment": "^5.0.1",
     "mongoose-paginate": "^5.0.3",
