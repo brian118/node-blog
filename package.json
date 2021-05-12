@@ -50,7 +50,7 @@
     "time-stamp": "^2.0.0",
     "winston": "^2.3.1",
     "geoip-lite": "^1.2.1",
-    "nodemailer": "^4.6.3",
+    "nodemailer": "^6.4.16",
     "nodemailer-smtp-transport": "^2.7.4",
     "yargs": "^11.0.0"
   },
