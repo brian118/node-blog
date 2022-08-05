@@ -37,7 +37,7 @@
     "marked": "^0.3.6",
     "moment": "^2.18.1",
     "mongodb": "^2.2.25",
-    "mongoose": "^4.9.3",
+    "mongoose": "^5.7.5",
     "mongoose-auto-increment": "^5.0.1",
     "mongoose-paginate": "^5.0.3",
     "node-fetch": "^1.6.3",
